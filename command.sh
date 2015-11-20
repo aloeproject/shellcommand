@@ -6,10 +6,6 @@
 #########################################################################
 #!/bin/bash
 
-alias wwwapp='cd /apps/home/lukang/www/src/www.genshuixue.com/app';
-alias papp='cd /apps/home/lukang/pay/src/p.genshuixue.com/app';
-alias mapp='cd /apps/home/lukang/m/src/m.genshuixue.com/app';
-alias phpunit='/apps/home/lukang/.mycommand/phpunit';
 alias grep='grep --color';
 
 
