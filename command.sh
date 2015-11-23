@@ -7,6 +7,8 @@
 #!/bin/bash
 
 alias grep='grep --color';
+alias mytar='tar -zcvf'
+alias unmytar='tar -xzvf'
 php=`which php`
 
 php_check() {
