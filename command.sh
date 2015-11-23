@@ -10,7 +10,22 @@ alias grep='grep --color';
 php=`which php`
 
 php_check() {
-	find -name "*.php" -exec /apps/srv/php-fpm/bin/php -l {} \;
+	path='.'
+	if [ -n "$1" ];then
+		path=`pwd`"/"$1
+	fi
+	if [ -d "$path" ];then
+		ret=$(find "$path" -name "*.php" -exec $php -l {} \;)
+		echo "$ret" > /tmp/check_list
+		ret=$(grep --color "Parse error" /tmp/check_list)
+		if [ -z "$ret" ];then
+			echo "no error"
+		else
+			echo "$ret"
+		fi
+	else
+		echo "$path is not directory"
+	fi
 }
 
 p_grep() {
