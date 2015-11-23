@@ -7,7 +7,7 @@
 #!/bin/bash
 
 alias grep='grep --color';
-
+php=`which php`
 
 php_check() {
 	find -name "*.php" -exec /apps/srv/php-fpm/bin/php -l {} \;
@@ -21,19 +21,19 @@ p_grep() {
 
 jsondecode(){
     if [ -n "$1" ];then
-        /apps/srv/php-fpm/bin/php ~/.mycommand/jsondecode.php "$@"
+        $php ~/.mycommand/jsondecode.php "$@"
     fi  
 }
 
 urldecode(){
     if [ -n "$1" ];then
-    	/apps/srv/php-fpm/bin/php ~/.mycommand/urldecode.php "$@"
+    	$php ~/.mycommand/urldecode.php "$@"
     fi  
 }
 
 unix_timestamp(){
     if [ -n "$@" ];then
-        /apps/srv/php-fpm/bin/php ~/.mycommand/mytime.php "unix_timestamp" "$@"
+		$php ~/.mycommand/mytime.php "unix_timestamp" "$@"
     else
         echo "参数不能为空"
     fi  
@@ -41,7 +41,7 @@ unix_timestamp(){
 
 from_unixtime(){
     if [ -n "$@" ];then
-         /apps/srv/php-fpm/bin/php ~/.mycommand/mytime.php "from_unixtime" "$@"
+         $php ~/.mycommand/mytime.php "from_unixtime" "$@"
     else
         echo "参数不能为空"
     fi  
