@@ -72,3 +72,13 @@ get_path(){
 		echo "参数不能为空";
 	fi
 }
+
+
+strlen(){
+	if [ -n "$@" ];then
+		$php ~/.mycommand/str.php  "$@"
+	else
+		echo "参数不能为空"
+	fi  
+
+}
