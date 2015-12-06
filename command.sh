@@ -41,7 +41,7 @@ php_check() {
 
 p_grep() {
     if [ -n "$1" ];then
-        find -type f -name "*.php" -exec grep "$1" -nH --color {} \;
+        find . -type f -name "*.php" -exec grep "$1" -nH --color {} \;
     fi  
 }
 
@@ -80,4 +80,14 @@ get_path(){
 	else
 		echo "参数不能为空";
 	fi
+}
+
+
+strlen(){
+	if [ -n "$@" ];then
+		$php ~/.mycommand/str.php  "$@"
+	else
+		echo "参数不能为空"
+	fi  
+
 }
