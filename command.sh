@@ -10,6 +10,15 @@ alias grep='grep --color';
 alias mytar='tar -zcvf'
 alias unmytar='tar -xzvf'
 php=`which php`
+#遍历目录
+
+showdir (){
+	if [ -z "$1" ];then
+		eachdir $(pwd)
+	else
+		eachdir .
+	fi
+}
 
 php_check() {
 	path='.'

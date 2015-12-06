@@ -1,6 +1,9 @@
 #!/bin/bash
 #在.bashrc包含此文件
-if [ -f ~/.mycommand/db.sh ];then
-	. ~/.mycommand/db.sh
+COMMOD_PATH="~/.mycommand"
+if [ -f /.mycommand/db.sh ];then
+	. /.mycommand/db.sh
 fi
-. ~/.mycommand/command.sh
+source ~/.mycommand/function.sh
+
+source ~/.mycommand/command.sh
