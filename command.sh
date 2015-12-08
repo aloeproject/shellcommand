@@ -16,7 +16,7 @@ showdir (){
 	if [ -z "$1" ];then
 		eachdir $(pwd)
 	else
-		eachdir .
+		eachdir $1
 	fi
 }
 
